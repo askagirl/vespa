@@ -73,16 +73,24 @@ public interface MetricsService {
         private final double memUtil;
         private final double diskUtil;
 
+        /**
+         * @param cpuUtil  percentage of system cpu utilization
+         * @param memUtil  percentage of system memory utilization
+         * @param diskUtil percentage of system disk utilization
+         */
         public SystemMetrics(double cpuUtil, double memUtil, double diskUtil) {
             this.cpuUtil = cpuUtil;
             this.memUtil = memUtil;
             this.diskUtil = diskUtil;
         }
 
+        /** @return the percentage of cpu utilization **/
         public double cpuUtil() { return cpuUtil; }
 
+        /** @return the percentage of memory utilization **/
         public double memUtil() { return memUtil; }
 
+        /** @return the percentage of disk utilization **/
         public double diskUtil() { return diskUtil; }
 
         public static class Builder {
